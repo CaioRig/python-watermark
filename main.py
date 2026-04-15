@@ -1,3 +1,4 @@
 import subprocess
+import sys
 
-subprocess.run(["python", "watermark.py"], check=True)
+subprocess.run([sys.executable, "watermark.py"], check=True)
