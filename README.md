@@ -41,7 +41,7 @@ source .venv/Scripts/activate
 pip install -r requirements.txt
 ```
 
-If `.venv` does not exist, `run_watermark.bat` will fail because it looks for `.venv\Scripts\python.exe`.
+If `.venv` does not exist, `run_watermark.bat` falls back to the Python interpreter available in your global `PATH`.
 
 ## Usage
 
@@ -58,6 +58,8 @@ On Windows, you can also use:
 ```bat
 run_watermark.bat
 ```
+
+The batch file will use `.venv\Scripts\python.exe` when `.venv` exists, and only fall back to the global `python` command when `.venv` is missing.
 
 Watermarked images will be saved to the `output/` folder.
 
