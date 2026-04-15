@@ -17,18 +17,46 @@ A Python tool to add watermarks to images with both logo and diagonal text overl
 
 ## Installation
 
+This project is intended to run from a local virtual environment stored in `.venv/`.
+
+1. Create the virtual environment:
+
+```bash
+python -m venv .venv
+```
+
+2. Activate it:
+
+```bash
+# Windows (Command Prompt)
+.venv\Scripts\activate
+
+# Windows (Git Bash)
+source .venv/Scripts/activate
+```
+
+3. Install the dependencies:
+
 ```bash
 pip install -r requirements.txt
 ```
+
+If `.venv` does not exist, `run_watermark.bat` will fail because it looks for `.venv\Scripts\python.exe`.
 
 ## Usage
 
 1. Place images in the `input/` folder
 2. Add `logo_transparente.png` and `arial.ttf` to the project root
-3. Run the watermark script:
+3. Run the watermark script from the activated `.venv`:
 
 ```bash
 python main.py
+```
+
+On Windows, you can also use:
+
+```bat
+run_watermark.bat
 ```
 
 Watermarked images will be saved to the `output/` folder.
@@ -51,6 +79,7 @@ python-watermark/
 ├── watermark.py
 ├── watermark_logo.py
 ├── requirements.txt
+├── .venv/               # local virtual environment (created locally)
 ├── input/
 └── output/
 ```
